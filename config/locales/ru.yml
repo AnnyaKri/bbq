@@ -16,6 +16,7 @@ ru:
         address: 'Место проведения'
         datetime: 'Дата и время'
         description: 'Описание'
+
   controllers:
     events:
       created: 'Вы создали новое мероприятие'
@@ -23,7 +24,19 @@ ru:
       destroyed: 'Вы удалили мероприятие :('
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
+
   app:
     name: 'Шашлыки'
     company: 'Хороший Программист. Лазурит'
+  comments:
+    comment:
+    destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+
+
+
+
 
