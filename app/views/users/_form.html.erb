@@ -1,18 +1,22 @@
-<%= form_for @user, html: { multipart: true } do |f| %>
+<%= form_for @user, data: { turbo: false }, html: { multipart: true } do |f| %>
   <%= render partial: "partials/form_errors", locals: { model: @user } %>
 
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+  <div class="col-md-4 buffer-top">
+    <div class="form-group buffer-top">
+      <i class="bi bi-person-circle"></i>
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.text_field :email, class: 'form-control' %>
-  </div>
+    <div class="form-group buffer-top">
+      <i class="bi bi-envelope-heart"></i>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'form-control' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
+    <div class="actions buffer-top">
+      <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+      или <%= link_to 'вернуться', :back %>
+    </div>
   </div>
 <% end %>

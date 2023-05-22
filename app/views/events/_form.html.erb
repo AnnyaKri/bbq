@@ -1,28 +1,34 @@
-<%= form_for(@event) do |f| %>
-  <%= render partial: 'partials/form_errors', locals: {model: @event} %>
+<%= form_for(@event, data: { turbo: false }) do |f| %>
+  <%= render partial: 'partials/form_errors', locals: { model: @event } %>
 
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
+  <div class="col-md-6 buffer-top">
+    <div class="form-group buffer-top">
+      <i class="bi bi-card-text"></i>
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :address %>
-    <%= f.text_field :address, class: 'form-control' %>
-  </div>
+    <div class="form-group buffer-top">
+      <i class="bi bi-geo-fill"></i>
+      <%= f.label :address %>
+      <%= f.text_field :address, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :datetime %>
-    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
-  </div>
+    <div class="form-group buffer-top">
+      <i class="bi bi-calendar-heart-fill"></i>
+      <%= f.label :datetime %>
+      <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :description %>
-    <%= f.text_area :description, class: 'form-control' %>
-  </div>
+    <div class="form-group buffer-top">
+      <i class="bi bi-chat-heart-fill"></i>
+      <%= f.label :description %>
+      <%= f.text_area :description, class: 'form-control' %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
+    <div class="actions buffer-top">
+      <%= f.submit 'Сохранить', class: 'btn btn-success' %>
+      или <%= link_to 'вернуться', :back %>
+    </div>
   </div>
 <% end %>
