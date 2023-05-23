@@ -27,6 +27,7 @@ gem "devise-i18n"
 
 gem "russian"
 
+gem "image_processing"
 gem "bootsnap", require: false
 
 group :development, :test do

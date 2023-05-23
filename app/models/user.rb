@@ -6,6 +6,11 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
 
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+    attachable.variant :middle, resize_to_limit: [500, 500]
+  end
+
   before_validation :set_name, on: :create
 
   validates :name, presence: true, length: { maximum: 35 }

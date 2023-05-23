@@ -11,6 +11,12 @@
     <%= f.text_field :email, class: 'form-control' %>
   </div>
 
+  <div class="form-group buffer-both">
+    <%= f.label :avatar, class: "form-label" %>
+    <p><%= image_tag(user_avatar_thumb(@user)) if @user.avatar.persisted? %></p>
+    <%= f.file_field :avatar, class: 'form-control' %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
     или <%= link_to 'вернуться', :back %>
