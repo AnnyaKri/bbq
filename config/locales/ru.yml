@@ -27,3 +27,10 @@ ru:
     name: 'Шашлыки'
     company: 'Хороший Программист. Лазурит'
 
+  error:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
+
+
+
