@@ -15,7 +15,7 @@
     <i class="bi bi-pen"></i>
     <%= f.label :password, class: "col-sm control-label" %>
     <% if @minimum_password_length %>
-      (<%= @minimum_password_length %> characters minimum)
+      (<%= @minimum_password_length %> знаков минимум)
     <% end %>
     <div class="col-sm-4">
       <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>

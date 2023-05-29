@@ -12,11 +12,11 @@
   </div>
 
   <div class="form-group buffer-top">
-    <%= f.label :password, class: 'col-sm control-label' %> <i>(leave blank if you don't want to change it)</i>
+    <%= f.label :password, class: 'col-sm control-label' %> <i>(оставьте поле пустым, если вы не хотите его изменять)</i>
     <div class="col-sm-4">
       <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
       <% if @minimum_password_length %>
-        <em><%= @minimum_password_length %> characters minimum</em>
+        <em><%= @minimum_password_length %> знаков минимум</em>
       <% end %>
     </div>
   </div>
@@ -30,7 +30,7 @@
 
   <div class="form-group buffer-top">
     <%= f.label :current_password, class: 'col-sm control-label' %>
-    <i>(we need your current password to confirm your changes)</i>
+    <i>(нам нужен ваш текущий пароль для подтверждения ваших изменений)</i>
     <div class="col-sm-4">
       <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
     </div>
