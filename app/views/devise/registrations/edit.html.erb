@@ -1,9 +1,10 @@
-<h2>Редактирование <%= @user.name %></h2>
+<h2>Редактирование "<%= @user.name %>"</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render partial: "partials/form_errors", locals: { model: resource } %>
+  <%= render partial: 'partials/form_errors', locals: { model: resource } %>
 
   <div class="form-group buffer-top">
+    <i class="bi bi-envelope-heart"></i>
     <%= f.label :email, class: 'col-sm control-label' %>
     <div class="col-sm-4">
       <%= f.email_field :email, class: 'form-control' %>
@@ -13,7 +14,7 @@
   <div class="form-group buffer-top">
     <%= f.label :password, class: 'col-sm control-label' %> <i>(leave blank if you don't want to change it)</i>
     <div class="col-sm-4">
-      <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+      <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
       <% if @minimum_password_length %>
         <em><%= @minimum_password_length %> characters minimum</em>
       <% end %>
@@ -23,7 +24,7 @@
   <div class="form-group buffer-top">
     <%= f.label :password_confirmation, class: 'col-sm control-label' %>
     <div class="col-sm-4">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+      <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
     </div>
   </div>
 
@@ -31,20 +32,20 @@
     <%= f.label :current_password, class: 'col-sm control-label' %>
     <i>(we need your current password to confirm your changes)</i>
     <div class="col-sm-4">
-      <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+      <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group buffer-top">
     <div class="col-sm-offset-2 col-sm-4">
-      <%= f.submit "Update", class: "btn btn-success" %>
+      <%= f.submit 'Обновить', class: 'btn btn-success' %>
     </div>
   </div>
 
 <% end %>
 
-<p>Unhappy? <%= button_to "Удалите меня", registration_path(resource_name),
-                          form: { data: { turbo_confirm: "Are you sure?" } }, method: :delete, class: "btn btn-danger" %></p>
+<p>Недовольны? <%= button_to 'Удалите меня', registration_path(resource_name),
+                          form: { data: { turbo_confirm: 'Вы уверены?' } }, method: :delete, class: 'btn btn-danger' %></p>
 
 
-<%= link_to "Back", :back %>
+<%= link_to 'Возврат', :back %>
