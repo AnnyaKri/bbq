@@ -18,6 +18,12 @@
               <%= link_to t('views.link_edit'), edit_event_path(@event),
                           class: 'btn btn-primary' %>
             </div>
+
+            <div class="buffer-both">
+              <%= button_to t('views.event.delete'), event_path(@event),
+                            data: { turbo_confirm: t('views.event.delete_confirm') },
+                            method: :delete, class: 'btn btn-danger' %>
+            </div>
           <% end %>
         </div>
       </div>

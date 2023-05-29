@@ -45,6 +45,8 @@ ru:
       edit_event: 'Редактирование события'
       index_event: 'События'
       create_event: 'Создать событие'
+      delete: 'Удалить'
+      delete_confirm: 'Точно удалить?'
     user:
       edit_user: 'Редактирование профиля'
       user_event: 'Организовал:'
