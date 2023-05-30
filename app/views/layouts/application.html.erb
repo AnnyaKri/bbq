@@ -13,25 +13,26 @@
 <body>
 <div class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
   <div class="container">
-    <%= link_to 'BBQ!', root_path, class: 'navbar-brand' %>
+
+    <%= link_to t('app.name'), root_path, class: 'navbar-brand' %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+
         <% if user_signed_in? %>
-          <li><%= link_to 'Профиль', current_user, class: 'nav-link' %></li>
-          <li><%= link_to 'Выйти', destroy_user_session_path,
-                          data: { turbo_method: :delete, turbo_confirm: 'Правда хотите выйти?' },
+          <li><%= link_to t('views.link_profile'), current_user, class: 'nav-link' %></li>
+          <li><%= link_to t('views.link_exit'), destroy_user_session_path,
+                          data: { turbo_method: :delete, turbo_confirm: t('views.user.confirm_delete') },
                           class: 'nav-link' %></li>
         <% else %>
-          <li><%= link_to 'Войти', new_user_session_path, class: 'nav-link' %></li>
-          <li><%= link_to 'Зарегистрироваться',
+          <li><%= link_to t('views.link_log_in'), new_user_session_path, class: 'nav-link' %></li>
+          <li><%= link_to t('views.link_sing_in'),
                           new_user_registration_path, class: 'nav-link' %></li>
         <% end %>
       </ul>
     </div>
-
   </div>
 </div>
 <div class="container">
@@ -56,7 +57,7 @@
   </div>
 
   <footer>
-    <p>&copy; Company 2016</p>
+    <p>&copy; <%= t('app.company') %> 2023</p>
   </footer>
 
 </div>

@@ -1,0 +1,81 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+
+  controllers:
+    events:
+      created: 'Вы создали новое событие'
+      updated: 'Вы обновили событие'
+      destroyed: 'Вы удалили событие :('
+    users:
+      updated: 'Вы обновили свой профиль'
+
+  app:
+    name: 'Шашлыки'
+    company: 'Хороший Программист. Лазурит'
+
+  views:
+    link_back: 'вернуться'
+    link_submit: 'Сохранить'
+    link_edit: 'Изменить'
+    link_profile: 'Профиль'
+    link_exit: 'Выйти'
+    link_log_in: 'Войти'
+    link_sing_in: 'Зарегистрироваться'
+    link_change_password: 'Сменить пароль'
+    link_edit_profile: 'Редактировать профиль'
+    link_or: 'или'
+    event:
+      show_event: 'Показать это событие'
+      back_to_events: 'Возврат к списку событий'
+      edit_event: 'Редактирование события'
+      index_event: 'События'
+      create_event: 'Создать событие'
+      delete: 'Удалить'
+      delete_confirm: 'Точно удалить?'
+    user:
+      edit_user: 'Редактирование профиля'
+      user_event: 'Организовал:'
+      no_events: 'Пользователь пока не организовал ни одного события'
+      confirm_delete: 'Правда хотите выйти?'
+  devise:
+    registration:
+      new: 'Регистрация'
+      edit: 'Редактирование '
+      password_field: '(оставьте поле пустым, если вы не хотите его менять)'
+      password_confirmation: '(нам нужен ваш текущий пароль для подтверждения ваших изменений)'
+      update: 'Обновить'
+      cancel_account: 'Удалить аккаунт'
+      confirm_delete: 'Вы уверены?'
+      unhappy: 'Недовольны?'
+      password_length: 'символов минимум '
+    sessions:
+      new: 'Вход'
+    passwords:
+      forgot_password: 'Забыли свой пароль?'
+      send_email: 'Пришлите мне инструкцию по сбросу пароля'
+
+  error:
+    one: 'В вашей форме %{count} ошибка'
+    few: 'В вашей форме %{count} ошибки'
+    many: 'В вашей форме %{count} ошибок'
+
+  model:
+    set_name: 'Товарисч '
+
+

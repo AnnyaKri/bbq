@@ -1,4 +1,4 @@
-<h2>Редактирование "<%= @user.name %>"</h2>
+<h2><%= I18n.t('devise.registration.edit') %><%= @user.name %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render partial: 'partials/form_errors', locals: { model: resource } %>
@@ -12,16 +12,19 @@
   </div>
 
   <div class="form-group buffer-top">
-    <%= f.label :password, class: 'col-sm control-label' %> <i>(оставьте поле пустым, если вы не хотите его изменять)</i>
+    <i class="bi bi-pen"></i>
+    <%= f.label :password, class: 'col-sm control-label' %> <i><%= t('devise.registration.password_field') %></i>
     <div class="col-sm-4">
       <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
       <% if @minimum_password_length %>
-        <em><%= @minimum_password_length %> знаков минимум</em>
+        <em><%= @minimum_password_length %>
+          <%= t('devise.registration.password_length') %></em>
       <% end %>
     </div>
   </div>
 
   <div class="form-group buffer-top">
+    <i class="bi bi-pen-fill"></i>
     <%= f.label :password_confirmation, class: 'col-sm control-label' %>
     <div class="col-sm-4">
       <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
@@ -29,8 +32,9 @@
   </div>
 
   <div class="form-group buffer-top">
+    <i class="bi bi-pen-fill"></i>
     <%= f.label :current_password, class: 'col-sm control-label' %>
-    <i>(нам нужен ваш текущий пароль для подтверждения ваших изменений)</i>
+    <i><%= t('devise.registration.password_confirmation') %></i>
     <div class="col-sm-4">
       <%= f.password_field :current_password, autocomplete: 'current-password', class: 'form-control' %>
     </div>
@@ -38,14 +42,23 @@
 
   <div class="form-group buffer-top">
     <div class="col-sm-offset-2 col-sm-4">
-      <%= f.submit 'Обновить', class: 'btn btn-success' %>
+      <div class="btn btn-success">
+        <i class="bi bi-fire"></i>
+        <%= f.submit t('devise.registration.update'), class: 'btn' %>
+      </div>
     </div>
-  </div>
-
 <% end %>
 
-<p>Недовольны? <%= button_to 'Удалите меня', registration_path(resource_name),
-                          form: { data: { turbo_confirm: 'Вы уверены?' } }, method: :delete, class: 'btn btn-danger' %></p>
+<p class="buffer-both"><%= t('devise.registration.unhappy') %></p>
+<div class="col-sm-offset-2 col-sm-4">
+  <div class="btn btn-danger">
+    <i class="bi bi-patch-exclamation-fill"></i>
+    <%= button_to 'Удалите меня',
+                  registration_path(resource_name),
+                  form: { data: { turbo_confirm: 'Вы уверены?' } },
+                  method: :delete, class: 'btn ' %>
+  </div>
+</div>
+<%= link_to t('views.link_back'), :back %>
 
-
-<%= link_to 'Возврат', :back %>
+</div>

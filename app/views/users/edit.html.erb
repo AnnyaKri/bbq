@@ -1,6 +1,6 @@
-<h1>Редактирование профиля</h1>
+<h1><%= I18n.t('.views.user.edit_user') %></h1>
 
     <%= render 'form' %>
   <p class="buffer-top">
-    <%= link_to 'Сменить пароль', edit_user_registration_path %>
+    <%= link_to t('views.link_change_password'), edit_user_registration_path %>
   </p>

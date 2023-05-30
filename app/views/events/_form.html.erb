@@ -26,9 +26,10 @@
       <%= f.text_area :description, class: 'form-control' %>
     </div>
 
-    <div class="actions buffer-top">
-      <%= f.submit 'Сохранить', class: 'btn btn-success' %>
-      или <%= link_to 'вернуться', :back %>
-    </div>
+  <div class="actions buffer-top">
+    <%= f.submit t('views.link_submit'), class: 'btn btn-success' %>
+    <%= t('views.link_or') %>
+    <%= link_to t('views.link_back'), :back %>
   </div>
 <% end %>
+</div>
