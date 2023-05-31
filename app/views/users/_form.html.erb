@@ -15,7 +15,9 @@
     </div>
 
     <div class="actions buffer-top">
-      <%= f.submit t('views.link_submit'), class: 'btn btn-success' %>
+      <div class="btn btn-success bi bi-fire">
+        <%= f.submit t('views.link_submit'), class: 'btn' %>
+      </div>
       <%= t('views.link_or') %>
       <%= link_to t('views.link_back'), :back %>
     </div>

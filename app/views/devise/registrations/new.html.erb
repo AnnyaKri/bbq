@@ -4,28 +4,24 @@
   <%= render partial: 'partials/form_errors', locals: { model: resource } %>
 
   <div class="form-group buffer-top">
-    <i class="bi bi-envelope-heart"></i>
-    <%= f.label :email, class: 'col-sm-2 control-label' %>
+    <!--    <i class="bi bi-envelope-heart"></i>-->
+    <%= f.label :email, class: 'col-sm-2 control-label bi bi-envelope-heart' %>
     <div class="col-sm-4">
       <%= f.email_field :email, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group buffer-top">
-    <i class="bi bi-pen"></i>
-    <%= f.label :password, class: "col-sm control-label" %>
-    <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %>
-        <%= t('devise.registration.password_length') %>)</em>
-    <% end %>
+    <%= f.label :password, class: "col-sm control-label bi bi-pen" %>
     <div class="col-sm-4">
       <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control' %>
+      (<%= @minimum_password_length %>
+      <%= t('devise.registration.password_length') %>)
     </div>
   </div>
 
   <div class="form-group buffer-top">
-    <i class="bi bi-pen-fill"></i>
-    <%= f.label :password_confirmation, class: 'col-sm-2 control-label' %>
+    <%= f.label :password_confirmation, class: 'col-sm-2 control-label bi bi-pen-fill' %>
     <div class="col-sm-4">
       <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
     </div>
@@ -33,8 +29,7 @@
 
   <div class="form-group buffer-top">
     <div class="col-sm-offset-2 col-sm-4">
-      <div class="btn btn-success">
-        <i class="bi bi-fire"></i>
+      <div class="btn btn-success bi bi-fire">
         <%= f.submit t('devise.registration.new'), class: 'btn' %>
       </div>
     </div>

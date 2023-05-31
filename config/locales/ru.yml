@@ -6,7 +6,7 @@ ru:
 
     attributes:
       user:
-        email: 'Email'
+        email: 'Почта'
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
@@ -53,6 +53,7 @@ ru:
       user_event: 'Организовал:'
       no_events: 'Пользователь пока не организовал ни одного события'
       confirm_delete: 'Правда хотите выйти?'
+
   devise:
     registration:
       new: 'Регистрация'
@@ -60,7 +61,7 @@ ru:
       password_field: '(оставьте поле пустым, если вы не хотите его менять)'
       password_confirmation: '(нам нужен ваш текущий пароль для подтверждения ваших изменений)'
       update: 'Обновить'
-      cancel_account: 'Удалить аккаунт'
+      cancel_account: ' Удалите меня'
       confirm_delete: 'Вы уверены?'
       unhappy: 'Недовольны?'
       password_length: 'символов минимум '

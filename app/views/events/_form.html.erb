@@ -3,14 +3,12 @@
 
   <div class="col-md-6 buffer-top">
     <div class="form-group buffer-top">
-      <i class="bi bi-card-text"></i>
-      <%= f.label :title %>
+      <%= f.label :title, class: 'bi bi-card-text' %>
       <%= f.text_field :title, class: 'form-control' %>
     </div>
 
     <div class="form-group buffer-top">
-      <i class="bi bi-geo-fill"></i>
-      <%= f.label :address %>
+      <%= f.label :address, class: 'bi bi-geo-fill' %>
       <%= f.text_field :address, class: 'form-control' %>
     </div>
 
@@ -26,10 +24,12 @@
       <%= f.text_area :description, class: 'form-control' %>
     </div>
 
-  <div class="actions buffer-top">
-    <%= f.submit t('views.link_submit'), class: 'btn btn-success' %>
-    <%= t('views.link_or') %>
-    <%= link_to t('views.link_back'), :back %>
-  </div>
+    <div class="actions buffer-top">
+      <div class="btn btn-success bi bi-fire">
+        <%= f.submit t('views.link_submit'), class: 'btn' %>
+      </div>
+      <%= t('views.link_or') %>
+      <%= link_to t('views.link_back'), :back %>
+    </div>
 <% end %>
 </div>
