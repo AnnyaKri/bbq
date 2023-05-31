@@ -70,6 +70,9 @@ ru:
     passwords:
       forgot_password: 'Забыли свой пароль?'
       send_email: 'Пришлите мне инструкцию по сбросу пароля'
+      change_password: 'Поменять пароль'
+      new_password: 'Новый пароль'
+      confirm_password: 'Подтвердите новый пароль'
 
   error:
     one: 'В вашей форме %{count} ошибка'

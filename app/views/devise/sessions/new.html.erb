@@ -2,16 +2,14 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-group buffer-top">
-    <i class="bi bi-envelope-heart"></i>
-    <%= f.label :email, class: 'col-sm-2 control-label' %>
+    <%= f.label :email, class: 'col-sm-2 control-label bi bi-envelope-heart' %>
     <div class="col-sm-4">
       <%= f.email_field :email, autofocus: true, class: 'form-control' %>
     </div>
   </div>
 
   <div class="form-group buffer-top">
-    <i class="bi bi-pen"></i>
-    <%= f.label :password, class: 'col-sm-2 control-label' %>
+    <%= f.label :password, class: 'col-sm-2 control-label bi bi-pen' %>
     <div class="col-sm-4">
       <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
     </div>
@@ -29,7 +27,7 @@
     <div class="col-sm-4 col-sm-offset-2">
       <div class="btn btn-success">
         <i class="bi bi-fire"></i>
-        <%= f.submit 'Вход', class: 'btn' %>
+        <%= f.submit t('devise.sessions.new'), class: 'btn' %>
       </div>
     </div>
   </div>
