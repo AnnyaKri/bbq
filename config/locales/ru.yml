@@ -30,12 +30,15 @@ ru:
       created: 'Вы создали новое событие'
       updated: 'Вы обновили событие'
       destroyed: 'Вы удалили событие :('
+
     users:
       updated: 'Вы обновили свой профиль'
+
     comments:
       destroyed: 'Комментарий удален'
       created: 'Ваш комментарий добавлен'
       error: 'Ошибка с комментарием'
+
     subscriptions:
       created: 'Вы подписаны на это событие'
       destroyed: 'Участник отписан'
@@ -48,10 +51,14 @@ ru:
   comments:
     comment:
       destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+    button_delete: 'Удалить комментарий'
+    form_submit: 'Отправить'
 
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+    form_submit: 'Подписаться'
+    button_delete: 'Удалить подписку'
 
   views:
     link_back: 'вернуться'
@@ -64,6 +71,7 @@ ru:
     link_change_password: 'Сменить пароль'
     link_edit_profile: 'Редактировать профиль'
     link_or: 'или'
+
     event:
       show_event: 'Показать это событие'
       back_to_events: 'Возврат к списку событий'
@@ -72,6 +80,7 @@ ru:
       create_event: 'Создать событие'
       delete: 'Удалить'
       delete_confirm: 'Точно удалить?'
+
     user:
       edit_user: 'Редактирование профиля'
       user_event: 'Организовал:'
@@ -79,6 +88,7 @@ ru:
       confirm_delete: 'Правда хотите выйти?'
 
   devise:
+
     registration:
       new: 'Регистрация'
       edit: 'Редактирование '
@@ -89,8 +99,10 @@ ru:
       confirm_delete: 'Вы уверены?'
       unhappy: 'Недовольны?'
       password_length: 'символов минимум '
+
     sessions:
       new: 'Вход'
+
     passwords:
       forgot_password: 'Забыли свой пароль?'
       send_email: 'Пришлите мне инструкцию по сбросу пароля'

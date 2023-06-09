@@ -10,10 +10,10 @@
     </span>
         <em><%= l comment.created_at, formal: :short %></em>
     <% if current_user_can_edit?(comment) %>
-      <%= button_to 'Удалить комментарий',
+      <%= button_to t('comments.button_delete'),
                     event_comment_path(comment.event, comment),
                     method: :delete,
-                    form: { data: { turbo_confirm: I18n.t('comments.comment.destroy_confirm') } },
+                    form: { data: { turbo_confirm: t('comments.comment.destroy_confirm') } },
                     class: 'btn btn-primary'
       %>
     <% end %>

@@ -5,7 +5,7 @@
     <em><%= subscription.user_name %></em>
   <% end %>
   <% if current_user_can_edit?(subscription) %>
-    <%= button_to 'Удалить подписку',
+    <%= button_to t('subscriptions.button_delete'),
                   event_subscription_path(subscription.event, subscription),
                   method: :delete,
                   form: { data: { turbo_confirm: t('subscriptions.subscription.destroy_confirm') } },
