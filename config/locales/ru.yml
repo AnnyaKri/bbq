@@ -17,6 +17,14 @@ ru:
         datetime: 'Дата и время'
         description: 'Описание'
 
+      subscription:
+        user_name: 'Имя'
+        user_email: 'Email'
+
+      comment:
+        body: 'Комментарий'
+        user_name: 'Имя'
+
   controllers:
     events:
       created: 'Вы создали новое событие'
@@ -24,10 +32,26 @@ ru:
       destroyed: 'Вы удалили событие :('
     users:
       updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с комментарием'
+    subscriptions:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
 
   app:
     name: 'Шашлыки'
     company: 'Хороший Программист. Лазурит'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот комментарий?'
+
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
 
   views:
     link_back: 'вернуться'

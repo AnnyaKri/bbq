@@ -1,4 +1,4 @@
-<h2><%= I18n.t('devise.registration.new') %></h2>
+<h2><%= t('devise.registration.new') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render partial: 'partials/form_errors', locals: { model: resource } %>

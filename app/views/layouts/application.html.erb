@@ -24,8 +24,9 @@
         <% if user_signed_in? %>
           <li><%= link_to t('views.link_profile'), current_user, class: 'nav-link' %></li>
           <li><%= link_to t('views.link_exit'), destroy_user_session_path,
-                          data: { turbo_method: :delete, turbo_confirm: t('views.user.confirm_delete') },
-                          class: 'nav-link' %></li>
+                          data: { turbo_method: :delete,
+                                  turbo_confirm: t('views.user.confirm_delete') }, class: 'nav-link' %></li>
+
         <% else %>
           <li><%= link_to t('views.link_log_in'), new_user_session_path, class: 'nav-link' %></li>
           <li><%= link_to t('views.link_sing_in'),
