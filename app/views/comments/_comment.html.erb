@@ -8,7 +8,7 @@
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>
     </span>
-        <em><%= l comment.created_at, formal: :short %></em>
+        <em><%= l comment.created_at, format: :short %></em>
     <% if current_user_can_edit?(comment) %>
       <%= button_to t('comments.button_delete'),
                     event_comment_path(comment.event, comment),

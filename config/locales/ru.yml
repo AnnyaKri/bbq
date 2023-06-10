@@ -59,6 +59,10 @@ ru:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
     form_submit: 'Подписаться'
     button_delete: 'Удалить подписку'
+    invite: 'Зовет:'
+    go_to: 'Пойдут:'
+    i_go: 'Я пойду:'
+    nobody: 'пока никого нет'
 
   views:
     link_back: 'вернуться'
