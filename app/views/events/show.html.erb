@@ -50,7 +50,7 @@
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
       <div class="event-subscriptions">
-        <% if @event.subscribers.present? %>
+        <% if @event.subscriptions.exists? %>
           <h4><%= t('subscriptions.go_to') %></h4>
           <p><%= render partial: 'subscriptions/subscription',
                         collection: @event.subscriptions.except(@new_subscription) %></p>
