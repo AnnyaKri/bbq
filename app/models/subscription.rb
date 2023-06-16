@@ -15,6 +15,9 @@ class Subscription < ApplicationRecord
   validates :user_email, uniqueness: { scope: :event_id },
             unless: -> { user.present? }
 
+  validate :free_email, unless: -> { user.present? }
+
+  validate :unique_subscription, unless: -> { user.present? }
   def user_name
     if user.present?
       user.name
@@ -31,4 +34,17 @@ class Subscription < ApplicationRecord
     end
   end
 
+  private
+
+  def user_present?
+    user.present?
+  end
+
+  def free_email
+    errors.add(:base, :free_email) if User.find_by(email: user_email).present?
+  end
+
+  def unique_subscription
+    errors.add(:base, :unique_subscription) if User.find_by(email: user_email) == event.user
+  end
 end

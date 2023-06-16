@@ -1,5 +1,10 @@
 ru:
   activerecord:
+    errors:
+      messages:
+        unique_subscription: 'На собственное событие нельзя подписаться!'
+        free_email: 'Email занят!'
+
     models:
       user: 'Пользователь'
       event: 'Событие'
