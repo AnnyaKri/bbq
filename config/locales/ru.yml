@@ -2,7 +2,7 @@ ru:
   activerecord:
     errors:
       messages:
-        unique_subscription: 'На собственное событие нельзя подписаться!'
+        canceling_self_subscription: 'На собственное событие нельзя подписаться!'
         free_email: 'Email занят!'
 
     models:

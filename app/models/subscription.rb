@@ -4,20 +4,20 @@ class Subscription < ApplicationRecord
 
   validates :event, presence: true
 
-  validates :user_name, presence: true,
-            unless: -> { user.present? }
-  validates :user_email, presence: true,
-            format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/,
-            unless: -> { user.present? }
+  with_options unless: -> { user.present? } do
+    validates :user_name, presence: true
+    validates :user_email, presence: true,
+              format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+    validates :user_email, uniqueness: { scope: :event_id }
+    validate :canceling_self_subscription
+    validate :free_email
+  end
 
-  validates :user, uniqueness: { scope: :event_id },
-            if: -> { user.present? }
-  validates :user_email, uniqueness: { scope: :event_id },
-            unless: -> { user.present? }
+  with_options if: -> { user.present? } do
+    validates :user, uniqueness: { scope: :event_id }
 
-  validate :free_email, unless: -> { user.present? }
+  end
 
-  validate :unique_subscription, unless: -> { user.present? }
   def user_name
     if user.present?
       user.name
@@ -36,15 +36,11 @@ class Subscription < ApplicationRecord
 
   private
 
-  def user_present?
-    user.present?
-  end
-
   def free_email
-    errors.add(:base, :free_email) if User.find_by(email: user_email).present?
+    errors.add(:base, :free_email) if User.exists?(email: user_email)
   end
 
-  def unique_subscription
-    errors.add(:base, :unique_subscription) if User.find_by(email: user_email) == event.user
+  def canceling_self_subscription
+    errors.add(:base, :canceling_self_subscription) if user_email == event.user.email
   end
 end
