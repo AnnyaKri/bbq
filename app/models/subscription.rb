@@ -8,7 +8,7 @@ class Subscription < ApplicationRecord
               format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
     validates :user_email, uniqueness: { scope: :event_id }
     validate :canceling_self_subscription
-    validate :free_email
+    validate :email_in_use
   end
 
   with_options if: -> { user.present? } do
@@ -34,8 +34,8 @@ class Subscription < ApplicationRecord
 
   private
 
-  def free_email
-    errors.add(:base, :free_email) if User.exists?(email: user_email)
+  def email_in_use
+    errors.add(:user_email, :email_in_use) if User.exists?(email: user_email)
   end
 
   def canceling_self_subscription

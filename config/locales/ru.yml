@@ -3,7 +3,7 @@ ru:
     errors:
       messages:
         canceling_self_subscription: 'На собственное событие нельзя подписаться!'
-        free_email: 'Email занят!'
+        email_in_use: 'занят!'
 
     models:
       user: 'Пользователь'
