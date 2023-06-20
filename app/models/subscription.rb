@@ -1,19 +1,19 @@
 class Subscription < ApplicationRecord
+  EMAIL_FORMAT = /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/.freeze
   belongs_to :event
   belongs_to :user, optional: true
 
   with_options unless: -> { user.present? } do
     validates :user_name, presence: true
     validates :user_email, presence: true,
-              format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
+              format: { with: EMAIL_FORMAT }
     validates :user_email, uniqueness: { scope: :event_id }
-    validate :canceling_self_subscription
     validate :email_in_use
   end
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
-
+    validate :canceling_self_subscription
   end
 
   def user_name
