@@ -5,6 +5,12 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
+  has_many :photos, dependent: :destroy
+
+  has_one_attached :avatar do |attachable|
+    attachable.variant :thumb, resize_to_limit: [200, 200]
+    attachable.variant :middle, resize_to_limit: [500, 500]
+  end
 
   before_validation :set_name, on: :create
 
@@ -23,5 +29,4 @@ class User < ApplicationRecord
     Subscription.where(user_id: nil, user_email: self.email)
                 .update_all(user_id: self.id)
   end
-
 end
