@@ -1,11 +1,9 @@
 class PhotosController < ApplicationController
   before_action :set_event, only: %i[create destroy]
-  before_action :set_photo, only: %i[destroy]
-  # GET /photos or /photos.json
+  before_action :set_photo, only: :destroy
   def create
     @new_photo = @event.photos.build(photo_params)
     @new_photo.user = current_user
-    # authorize @new_photo
 
     if @new_photo.save
       redirect_to @event, notice: I18n.t('controllers.photos.created')
@@ -16,7 +14,6 @@ class PhotosController < ApplicationController
 
   def destroy
     message = { notice: I18n.t('controllers.photos.destroyed') }
-
     # Проверяем, может ли пользователь удалить фотографию
     # Если может — удаляем
     if current_user_can_edit?(@photo)

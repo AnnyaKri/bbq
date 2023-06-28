@@ -16,17 +16,12 @@ module ApplicationHelper
   end
 
   def event_photo(event)
-  photos = event.photos.persisted
+    photos = event.photos.persisted
 
-  if photos.any?
-    photos.sample.photo.url
-  else
-    asset_path('event.jpg')
+    if photos.any?
+      url_for(photos.sample.photo)
+    else
+      asset_path('event.jpg')
+    end
   end
-end
-
-  def fa_icon(icon_class)
-    content_tag 'span', '', class: "fa fa-#{icon_class}"
-  end
-
 end
