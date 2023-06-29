@@ -13,7 +13,7 @@
       <%= button_to '',
                     event_comment_path(comment.event, comment),
                     method: :delete,
-                    form: { data: { turbo_confirm: I18n.t('comments.comment.destroy_confirm') } },
+                    form: { data: { turbo_confirm: t('comments.comment.destroy_confirm') } },
                     class: 'btn-close'
       %>
     <% end %>

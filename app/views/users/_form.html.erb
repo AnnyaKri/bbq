@@ -14,7 +14,6 @@
       <%= f.text_field :email, class: 'form-control' %>
     </div>
 
-<<<<<<< HEAD
     <div class="actions buffer-top">
       <div class="btn btn-success bi bi-fire">
         <%= f.submit t('views.link_submit'), class: 'btn' %>
@@ -22,16 +21,11 @@
       <%= t('views.link_or') %>
       <%= link_to t('views.link_back'), :back %>
     </div>
-=======
-  <div class="form-group buffer-both">
-    <%= f.label :avatar, class: "form-label" %>
-    <p><%= image_tag(user_avatar_thumb(@user)) if @user.avatar.persisted? %></p>
-    <%= f.file_field :avatar, class: 'form-control' %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit 'Сохранить', class: 'btn btn-primary' %>
-    или <%= link_to 'вернуться', :back %>
->>>>>>> active_storage
+    <div class="form-group buffer-both">
+      <%= f.label :avatar, class: "form-label" %>
+      <p><%= image_tag(user_avatar_thumb(@user)) if @user.avatar.persisted? %></p>
+      <%= f.file_field :avatar, class: 'form-control' %>
+    </div>
   </div>
 <% end %>

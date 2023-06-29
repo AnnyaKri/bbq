@@ -15,6 +15,7 @@ ru:
         name: 'Имя'
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
+        avatar: 'Аватар'
       photo:
         photo: 'Фотография'
       event:
@@ -72,6 +73,11 @@ ru:
     go_to: 'Пойдут:'
     i_go: 'Я пойду:'
     nobody: 'пока никого нет'
+
+  photos:
+    photo:
+      destroy_confirm: 'Удалить фото?'
+    form_submit: 'Загрузить'
 
   views:
     link_back: 'вернуться'

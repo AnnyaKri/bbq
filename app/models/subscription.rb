@@ -25,9 +25,7 @@ class Subscription < ApplicationRecord
   end
 
   def user_email
-    if user.present?
-      user&.email || super
-    end
+    user&.email || super
   end
 
   private
