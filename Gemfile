@@ -30,7 +30,7 @@ gem "rails-i18n"
 gem "image_processing"
 
 gem "bootsnap", require: false
-
+gem "aws-sdk-s3", require: false
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
