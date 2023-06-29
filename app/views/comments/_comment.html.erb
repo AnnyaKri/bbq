@@ -7,17 +7,16 @@
       <% else %>
         <em><strong><%= comment.user_name %></strong></em>
       <% end %>
-<!--      </span>-->
       <em><%= l comment.created_at, format: :short %></em>
-      <% if current_user_can_edit?(comment) %>
-        <%= button_to '',
-                      event_comment_path(comment.event, comment),
-                      method: :delete,
-                      form: { data: { turbo_confirm: I18n.t('comments.comment.destroy_confirm') } },
-                      class: 'btn-close'
-        %>
-      <% end %>
     </div>
+    <% if current_user_can_edit?(comment) %>
+      <%= button_to '',
+                    event_comment_path(comment.event, comment),
+                    method: :delete,
+                    form: { data: { turbo_confirm: I18n.t('comments.comment.destroy_confirm') } },
+                    class: 'btn-close'
+      %>
+    <% end %>
   </div>
 </div>
 
