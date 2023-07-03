@@ -28,7 +28,7 @@ gem "devise-i18n"
 gem "rails-i18n"
 
 gem "image_processing"
-
+gem 'active_storage_validations'
 gem "bootsnap", require: false
 gem "aws-sdk-s3", require: false
 group :development, :test do

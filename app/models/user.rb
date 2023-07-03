@@ -8,15 +8,15 @@ class User < ApplicationRecord
   has_many :photos, dependent: :destroy
 
   has_one_attached :avatar do |attachable|
-    attachable.variant :thumb, resize_to_limit: [200, 200]
-    attachable.variant :middle, resize_to_limit: [500, 500]
+    attachable.variant :thumb, resize_to_fill: [200, 200]
+    attachable.variant :middle, resize_to_fill: [400, 400]
   end
 
   before_validation :set_name, on: :create
 
   validates :name, presence: true, length: { maximum: 35 }
   validates :email, presence: true, uniqueness: true, length: { maximum: 255 }
-
+  validates :avatar, attached: true, content_type: %w[image/png image/jpeg image/jpg image/gif]
   after_commit :link_subscriptions, on: :create
 
   private
