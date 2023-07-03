@@ -1,9 +1,11 @@
-<div class="col-md-3 ">
+<div class="col-md-3">
   <figure class="figure">
-    <%= link_to image_tag(photo.photo.variant(:thumb), class: "img-fluid rounded"), photo.photo %>
+    <%= link_to image_tag(photo.photo.variant(:thumb), class: "img-fluid rounded"), photo.photo,
+                data: { toggle: "lightbox", gallery: "example-gallery" } %>
     <figcaption class="figure-caption">
       <span class="d-flex justify-content-between ">
-        Добавил <%= render partial: 'users/user', object: photo.user %>
+        <%=t('photos.added') %>
+        <%= render partial: 'users/user', object: photo.user %>
         <% if current_user_can_edit?(photo) %>
           <%= button_to '',
                         event_photo_path(photo.event, photo),

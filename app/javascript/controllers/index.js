@@ -2,9 +2,20 @@
 // Run that command whenever you add a new controller or create them with
 // ./bin/rails generate stimulus controllerName
 
-import { application } from "./application"
+import {application} from "./application"
+import 'bs5-lightbox';
+
+import Lightbox from 'bs5-lightbox';
+
+document.querySelectorAll(".my-lightbox-toggle").forEach((el) => el.addEventListener("click", (e) => {
+    e.preventDefault();
+    const lightbox = new Lightbox(el, options);
+    lightbox.show();
+}));
 
 import HelloController from "./hello_controller"
+
 application.register("hello", HelloController)
 import ConfirmationController from "./confirmation_controller"
+
 application.register("confirmation", ConfirmationController)

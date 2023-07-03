@@ -78,7 +78,7 @@ ru:
     photo:
       destroy_confirm: 'Удалить фото?'
     form_submit: 'Загрузить'
-
+    added: 'Добавил'
   views:
     link_back: 'вернуться'
     link_submit: 'Сохранить'
